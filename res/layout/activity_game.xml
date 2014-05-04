@@ -8,12 +8,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".GameActivity" >
 
-    <GridView
-        android:id="@+id/gv_board"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        android:numColumns="8" >
-    </GridView>
+    <RelativeLayout
+        android:id="@+id/rl_boardEdges"
+        android:layout_width="320dp"
+        android:layout_height="320dp" >
+
+        <GridView
+            android:id="@+id/gv_board"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"
+            android:numColumns="8" >
+        </GridView>
+    </RelativeLayout>
 
 </RelativeLayout>
