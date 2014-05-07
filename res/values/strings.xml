@@ -4,5 +4,8 @@
     <string name="app_name">Othello</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="black">BLACK</string>
+    <string name="white">WHITE</string>
+    <string name="info">&lt;>\'s Turn</string>
 
 </resources>
