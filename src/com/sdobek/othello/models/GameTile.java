@@ -1,6 +1,5 @@
 package com.sdobek.othello.models;
 
-import android.R.bool;
 
 public class GameTile {
 
@@ -11,6 +10,8 @@ public class GameTile {
 
 	private boolean adjacentBlack[];
 	private boolean adjacentWhite[];
+	
+	private boolean animateFlip;
 
 	public GameTile() {
 		open = true;
@@ -19,6 +20,7 @@ public class GameTile {
 		canMoveWhite = false;
 		adjacentBlack = new boolean[8];
 		adjacentWhite = new boolean[8];
+		animateFlip = false;
 	}
 
 	public GameTile(Color color) {
@@ -92,7 +94,7 @@ public class GameTile {
 		adjacentBlack[6] = adjW;
 		adjacentBlack[7] = adjNW;
 	}
-
+	
 	public void setAdjacenciesWhite(boolean adjN, boolean adjS, boolean adjE, boolean adjW, 
 										boolean adjNE, boolean adjNW, boolean adjSE, boolean adjSW) {
 		adjacentWhite[0] = adjN;
@@ -112,4 +114,13 @@ public class GameTile {
 	public boolean[] getAdjacenciesWhite(){
 		return adjacentWhite;
 	}
+	
+	public void setAnimateFlip(boolean flip){
+		animateFlip = flip;
+	}
+	
+	public boolean getAnimateFlip(){
+		return animateFlip;
+	}
+
 }

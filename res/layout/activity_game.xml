@@ -2,90 +2,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".GameActivity" >
 
-    <RelativeLayout
-        android:id="@+id/rl_boardEdges"
-        android:layout_width="320dp"
-        android:layout_height="320dp" >
-
-        <GridView
-            android:id="@+id/gv_board"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#fff"
-            android:numColumns="8" >
-        </GridView>
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <TextView
+        android:id="@+id/tv_infoBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/rl_boardEdges"
-        android:layout_alignRight="@+id/rl_boardEdges"
-        android:layout_below="@+id/rl_boardEdges"
-        android:layout_marginTop="46dp" >
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:gravity="left"
+        android:text="@string/info"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_infoBox"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_infoBox" >
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".33"
+            android:id="@+id/ll_scorebox"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/tv_blackScoreBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/black"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
 
-            <TextView
-                android:id="@+id/tv_blackScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_black_piece" />
 
+                <TextView
+                    android:id="@+id/tv_blackScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingRight="18dp"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_white_piece" />
+
+                <TextView
+                    android:id="@+id/tv_whiteScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingRight="18dp"
+                    android:text="TextView" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/button_style"
+                android:onClick="onNewGame"
+                android:text="@string/new_game"
+                android:textColor="#FFF"
+                android:textSize="14sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".34"
-            android:orientation="vertical" >
+        <RelativeLayout
+            android:id="@+id/rl_boardEdges"
+            android:layout_width="192dp"
+            android:layout_height="192dp" >
 
-            <TextView
-                android:id="@+id/tv_infoBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/info"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".33"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/tv_whiteScoreBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/white"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <TextView
-                android:id="@+id/tv_whiteScore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
-
-        </LinearLayout>
+            <GridView
+                android:id="@+id/gv_board"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="#fff"
+                android:numColumns="8" >
+            </GridView>
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

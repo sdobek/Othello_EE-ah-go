@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Othello</string>
+    <string name="app_name">Iag-o-thello</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="black">BLACK</string>
-    <string name="white">WHITE</string>
+    <string name="black">Black\'s Turn</string>
+    <string name="white">White\'s Turn</string>
+    <string name="no_white">Black\'s Turn Again (no white moves)</string>
+    <string name="no_black">White\'s Turn Again (no black moves)</string>
+    <string name="gameover_black">Game Over.  Black Wins!</string>
+    <string name="gameover_white">Game Over.  White Wins!</string>
+    <string name="gameover_draw">Game Over.  Draw!</string>
     <string name="info">&lt;>\'s Turn</string>
+    <string name="new_game">New Game</string>
 
 </resources>
