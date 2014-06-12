@@ -118,9 +118,6 @@ public class TileArrayAdapter extends ArrayAdapter<GameTile> {
 	public boolean checkValidMoves(Color player, Color diff) {
 		boolean playerValidMoves = false;
 		for (int pos = 0; pos < 64; pos++) {
-			if (pos == 50) {
-				pos = 50;
-			}
 			// Check if tile is empty - and therefore a move can be made
 			GameTile gt = this.getItem(pos);
 			if (gt.getColor() != Color.COLORLESS) {
