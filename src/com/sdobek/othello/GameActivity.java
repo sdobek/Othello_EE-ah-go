@@ -77,12 +77,12 @@ public class GameActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View v, int position,
 					long id) {
-				tilesAdapter.clearFlipAnimations(); // reset tile animations to
-													// false
 				GameTile gt = tiles.get(position);
 				if (gt.getCanMove(turn)) {
 					gt.setColor(turn);
 					delta = 0;
+					tilesAdapter.clearFlipAnimations(); // reset tile animations 
+														// to false
 					flip(gt, position);
 					// update
 					if (turn == Color.BLACK) {
