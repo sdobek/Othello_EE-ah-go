@@ -20,8 +20,6 @@ import com.sdobek.othello.models.GameTile;
 
 public class GameActivity extends Activity {
 
-	public static boolean gameOver;
-
 	List<GameTile> tiles;
 	TileArrayAdapter tilesAdapter;
 	GridView board;
@@ -35,8 +33,8 @@ public class GameActivity extends Activity {
 	int w_score = 2;
 	int delta = 0;
 
-	private float scale = 1f;
-	private ScaleGestureDetector SGD;
+//	private float scale = 1f;
+//	private ScaleGestureDetector SGD;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +86,7 @@ public class GameActivity extends Activity {
 					delta = 0;
 					tilesAdapter.clearFlipAnimations(); // reset tile animations 
 														// to false
-					flip(gt, position);
+					flip(gt);
 					// update
 					if (turn == Color.BLACK) {
 						b_score += 1 + delta;
@@ -142,10 +140,8 @@ public class GameActivity extends Activity {
 		}
 	}
 
-	public void flip(GameTile gt, int position) {
-		GameTile next = null;
-		int offset = 0;
-		boolean adjacent[] = null;
+	public void flip(GameTile gt) {
+		boolean adjacent[];
 		switch (gt.getColor()) {
 		case BLACK:
 			adjacent = gt.getAdjacenciesBlack();
@@ -154,7 +150,7 @@ public class GameActivity extends Activity {
 			adjacent = gt.getAdjacenciesWhite();
 			break;
 		default:
-			break;
+			return; // Should not happen
 		}
 		// top
 		if (adjacent[0]) {
