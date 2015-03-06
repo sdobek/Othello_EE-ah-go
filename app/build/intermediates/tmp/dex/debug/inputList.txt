@@ -1,0 +1,2 @@
+/Users/stevendobek/AndroidStudioProjects/Iag_o_thello/app/build/intermediates/classes/debug
+/Users/stevendobek/AndroidStudioProjects/Iag_o_thello/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-f443d5de6797013d5dc172dfec3fa7a90db1e883.jar
